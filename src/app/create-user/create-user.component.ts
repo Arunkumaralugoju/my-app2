@@ -22,7 +22,7 @@ export class CreateUserComponent {
     console.log(this.userForm);
     this._usersService.createUser(this.userForm.value).subscribe(
       (data:any)=>{
-        alert("user created succesfully");
+        alert("user created succesfullyY");
       },
       (err:any)=>{
         alert("internal server error");
