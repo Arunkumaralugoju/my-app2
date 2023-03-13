@@ -1,0 +1,49 @@
+<p>cart works!</p>
+<label for="">name</label>
+<input type="text" name="" id="" [(ngModel)]="product.name">
+<br>
+<label for="">price</label>
+<input type="number" name="" id="" [(ngModel)]="product.price">
+<br>
+<label for="">rating</label>
+<input type="number" name="" id="" [(ngModel)]="product.rating">
+<br>
+<label for="">FREE DELIVERY</label>
+<label for="">yes</label>
+<input type="radio" name="fd" id="" [(ngModel)]="product.isFreeDelivery" value="true">
+<label for="">no</label>
+<input type="radio" name="fd" id="" [(ngModel)]="product.isFreeDelivery" value="false">
+<br>
+<button class="btn btn-primary" (click)="create()">create</button>
+<br><br>
+<input type="text" [(ngModel)]="term" (keypress)="search()">
+<button  class="btn btn-primary" (click)="onlyfree()">free delivery</button>
+<button class="btn btn-warning" (click)="pricelh()">price low to high</button>
+<button class="btn btn-warning" (click)="pricehl()">price high to low</button>
+<button class="btn btn-warning" (click)="discount()">discount 50%</button>
+<button class="btn btn-dark" (click)="charges()">charges</button>
+<button class="btn btn-dark" (click)="total()">total price</button>
+<button class="btn btn-dark" (click)="count()">cart count</button>
+<button class="btn btn-warning" (click)="pricellh()"> low to high</button>
+<button class="btn btn-warning" (click)="pricehhl()"> high to low</button>
+<table class="table table-dark table-hover">
+    <thead>
+        <th>s.No</th>
+        <th>product name</th>
+        <th>price</th>
+        <th>rating</th>
+        <th>free delivery</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products; let i=index">
+        <td>{{i}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.rating}}</td>
+        <td>{{product.isFreeDelivery}}</td>
+        <td>
+            <button class="btn btn-danger" (click)="delete(i)">delete</button>
+        </td>
+        </tr>
+    </tbody>
+</table>

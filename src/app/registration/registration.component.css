@@ -1,0 +1,15 @@
+.parent{
+    width: 100vw;
+    height: 100vh;
+    background-color: blue;
+}
+.child{
+    width: 60%;
+    height: 100%;
+    background-color: aquamarine;
+    padding: 20%;
+    border-radius: 20%;
+}
+h1{
+    color: red;
+}

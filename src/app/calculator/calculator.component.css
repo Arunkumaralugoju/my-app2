@@ -1,0 +1,44 @@
+.parent{
+    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.child{
+    background-color: greenyellow;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+
+} input{
+    color: black;
+    background-color:white;
+    padding: 20px;
+    margin-left: 20px;
+    width: 60%;
+    position: relative;
+    left: 90px;
+    
+    
+}
+button{
+    background-color: blue;
+    color: black;
+    display: inline-block;
+    margin: 20px;
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    left: 160px;
+}
+h3{
+    color: black;
+    text-align: center;
+}
+h1{
+    color: red;
+    text-align: center;
+}

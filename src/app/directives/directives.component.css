@@ -1,0 +1,17 @@
+.product{
+    border: 2px,solid red;
+    padding: 30px;
+    margin: 20px;
+    display: inline-block;
+    background-color: rgb(234, 242, 85);
+    text-align: center;
+}
+.minor{
+    color: red;
+    background-color: blue;
+}
+.maojor{
+    color: green;
+    background-color: yellow;
+
+}

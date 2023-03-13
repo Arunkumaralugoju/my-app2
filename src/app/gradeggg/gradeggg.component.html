@@ -1,0 +1,20 @@
+
+<p>grade works!</p>
+<div class="parent"></div>
+<h1>grade calculator</h1>
+<label for="">marks:</label>
+
+<input type="text" [(ngModel)]="grade">
+<div style="display: flex;">
+    <h2>Grade is </h2>
+    <h2 *ngIf="grade>=90 && grade<=100"> A+</h2>
+    <h2 *ngIf="grade>=70 && grade<90" >b+</h2>
+    <h2 *ngIf="grade>=50 && grade<70">c+</h2>
+    <h2 *ngIf="grade>=40 && grade<50">d+</h2>
+    <h2 *ngIf="grade>=35 && grade<40">E+</h2>
+    <h2 *ngIf="grade>=0 && grade<35">fail+</h2>
+
+</div>
+
+
+

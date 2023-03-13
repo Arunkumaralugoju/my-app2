@@ -1,0 +1,25 @@
+.products{
+    border: 2px,solid red;
+    
+    margin: 20px;
+    display: inline-block;
+    height: 50%;
+    width:30%;
+    background-color: white;
+    text-align: center;
+    
+}
+h1{
+    text-align: center;
+    color:black;
+    font-size: small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+
+}
+img{
+    
+    width: 20%;
+    height: 20%;
+
+}
