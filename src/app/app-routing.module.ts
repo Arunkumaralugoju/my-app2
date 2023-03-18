@@ -28,6 +28,8 @@ import { ParentComponent } from './parent/parent.component';
 import { ProductComponent } from './product/product.component';
 import { NavComponent } from './nav/nav.component';
 import { CartlistComponent } from './cartlist/cartlist.component';
+import { NotifyGuard } from './notify.guard';
+import { AboutCeoComponent } from './about-ceo/about-ceo.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -51,13 +53,14 @@ const routes: Routes = [
     {path:'activity',component:AccountsComponent},
     {path:'create-user',component:CreateUserComponent},
     {path:'create-user/:id',component:CreateUserComponent},
-    {path:'create-student',component:CreateStudentComponent},
+    {path:'create-student',component:CreateStudentComponent,canDeactivate:[NotifyGuard]},
     {path :'create-form',component:CreateFormComponent},
     {path:'user-details/:id',component:UserDetailsComponent},
     {path:'parent',component:ParentComponent},
     {path:'product',component:ProductComponent},
     {path:'nav',component:NavComponent},
-    {path:'cartlist',component:CartlistComponent}
+    {path:'cartlist',component:CartlistComponent},
+    {path:'about-ceo',component:AboutCeoComponent}
     
 
     

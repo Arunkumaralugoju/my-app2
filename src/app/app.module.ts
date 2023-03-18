@@ -39,6 +39,12 @@ import { ChildComponent } from './child/child.component';
 import { ProductComponent } from './product/product.component';
 import { NavComponent } from './nav/nav.component';
 import { CartlistComponent } from './cartlist/cartlist.component';
+import { RatingComponent } from './rating/rating.component';
+import { AboutCeoComponent } from './about-ceo/about-ceo.component';
+import { AboutDirectorComponent } from './about-director/about-director.component';
+import { AbouHistoryComponent } from './abou-history/abou-history.component';
+import { AboutModuleComponent } from './about-module/about-module.component';
+import { AboutModule } from './about/about.module';
 
 
 
@@ -77,7 +83,12 @@ import { CartlistComponent } from './cartlist/cartlist.component';
          ChildComponent,
          ProductComponent,
          NavComponent,
-         CartlistComponent
+         CartlistComponent,
+         RatingComponent,
+         AboutCeoComponent,
+         AboutDirectorComponent,
+         AbouHistoryComponent,
+         AboutModuleComponent
          
         
       
@@ -94,7 +105,8 @@ import { CartlistComponent } from './cartlist/cartlist.component';
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    AboutModule
 
    
   ],
