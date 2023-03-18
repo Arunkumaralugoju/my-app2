@@ -10,7 +10,7 @@
     <h6> errors:{{creatStudent.get('name')?.errors|json}}</h6>
     <h6> touched:{{creatStudent.get('name')?.touched}}</h6>
     <h6> untouched:{{creatStudent.get('name')?.untouched}}</h6>
-    <h6> dity:{{creatStudent.get('name')?.dirty}}</h6>
+    <h6> dirty:{{creatStudent.get('name')?.dirty}}</h6>
     <h6> prisine:{{creatStudent.get('name')?.pristine}}</h6>
     <h6> valid:{{creatStudent.get('name')?.valid}}</h6>
     <h6> invalid:{{creatStudent.get('name')?.invalid}}</h6>
@@ -132,8 +132,12 @@
         </div>
     </div>
     <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     <button class="btn btn-danger" (click)="submit()">submit</button>
 </form>
-<p>hello </p>
-<p>hi</p>
-<pre>kjiufsgfiugujlwbmgnvlskghvogosjagbl</pre>

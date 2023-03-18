@@ -22,6 +22,12 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { WishComponent } from './wish/wish.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { CreateStudentComponent } from './create-student/create-student.component';
+import { CreateFormComponent } from './create-form/create-form.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ProductComponent } from './product/product.component';
+import { NavComponent } from './nav/nav.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -44,7 +50,15 @@ const routes: Routes = [
     {path:'accounts',component:AccountsComponent},
     {path:'activity',component:AccountsComponent},
     {path:'create-user',component:CreateUserComponent},
-    {path:'create-student',component:CreateStudentComponent}
+    {path:'create-user/:id',component:CreateUserComponent},
+    {path:'create-student',component:CreateStudentComponent},
+    {path :'create-form',component:CreateFormComponent},
+    {path:'user-details/:id',component:UserDetailsComponent},
+    {path:'parent',component:ParentComponent},
+    {path:'product',component:ProductComponent},
+    {path:'nav',component:NavComponent},
+    {path:'cartlist',component:CartlistComponent}
+    
 
     
   ]},

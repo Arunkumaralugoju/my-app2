@@ -1,0 +1,131 @@
+
+<form [formGroup]="createForm">
+<label >username:</label>
+    <input type="text" formControlName="username" >
+    <div  class="text-danger" *ngIf="createForm.get('username')?.invalid &&  createForm.get('username')?.touched">
+        <p *ngIf="createForm.get('username')?.errors?.['required']">username is required</p>
+        <p *ngIf="createForm.get('username')?.errors?.['minlength']">min length of username should be 3</p>
+        <p *ngIf="createForm.get('username')?.errors?.['maxlength']">max length should be 10</p>
+
+    </div>
+    <h6> value:{{createForm.get('username')?.value}}</h6>
+    <h6> errors:{{createForm.get('username')?.errors|json}}</h6>
+    <h6> touched:{{createForm.get('username')?.touched}}</h6>
+    <h6> untouched:{{createForm.get('username')?.untouched}}</h6>
+    <h6> dirty:{{createForm.get('username')?.dirty}}</h6>
+    <h6> prisine:{{createForm.get('username')?.pristine}}</h6>
+    <h6> valid:{{createForm.get('username')?.valid}}</h6>
+    <h6> invalid:{{createForm.get('username')?.invalid}}</h6>
+    <br>
+    <br>
+    <label >password:</label>
+    <input type="text"  formControlName="password">
+    <div class="text-danger" *ngIf="createForm.get('password')?.invalid && createForm.get('password')?.touched" >
+        <p *ngIf="createForm.get('password')?.errors?.['required']">password is required</p>
+        <p *ngIf="createForm.get('password')?.errors?.['min']">min password should be 0</p>
+        <p *ngIf="createForm.get('password')?.errors?.['max']">max password should be 100 only</p>
+
+    </div>
+    <br>
+    <!-- <button class="btn btn-danger" (click)="creat()" >create</button> -->
+<form [formGroup]="createStudent1" >
+<label for="">name</label>
+<input type="text" formControlName="name">
+<br>
+<label for="">class:</label>
+<input type="number" formControlName="class">
+<br>
+<label for="">fathername:</label>
+<input type="text" formControlName="fatherName">
+<br>
+<label for="">email</label>
+<input type="text" formControlName="email">
+<br>
+<label for="">date of birth</label>
+<input type="month" formControlName="dateOfBirth">
+<br>
+<div formControlName="address">
+    <label for="">city</label>
+    <input type="text" formControlName="city">
+    <div class="text-danger"
+        *ngIf="createStudent1.get('address')?.get('city')?.invalid &&createStudent1.get('address')?.get('city')?.touched">
+        <p *ngIf="createStudent1.get('address')?.get('city')?.errors?.['required']"> city is required</p>
+        <p *ngIf="createStudent1.get('address')?.get('city')?.errors?.['minLenght']"> city should contain min 3
+        characters</p>
+        <p *ngIf="createStudent1.get('address')?.get('city')?.errors?.['maxLenght']"> city should contain max 10
+        characters only</p>
+    </div>
+    <label for="">state</label>
+    <input type="text" formControlName="state">
+    <div class="text-danger"
+        *ngIf="createStudent1.get('address')?.get('state')?.invalid &&createStudent1.get('address')?.get('state')?.touched">
+        <p *ngIf="createStudent1.get('address')?.get('state')?.errors?.['required']"> state is required</p>
+        <p *ngIf="createStudent1.get('address')?.get('state')?.errors?.['minLenght']"> state should contain min 3
+        characters</p>
+        <p *ngIf="createStudent1.get('address')?.get('state')?.errors?.['maxLenght']"> state should contain max 10
+        characters only</p>
+</div>
+<br>
+    <label for="">pin</label>
+    <input type="text" formControlName="pincode">
+    <div class="text-danger"
+            *ngIf="createStudent1.get('address')?.get('pincode')?.invalid &&createStudent1.get('address')?.get('pin')?.touched">
+            <p *ngIf="createStudent1.get('address')?.get('pincode')?.errors?.['required']"> pincode is required</p>
+            <p *ngIf="createStudent1.get('address')?.get('pincode')?.errors?.['min']"> pincode should contain min 6 characters</p>
+            <p *ngIf="createStudent1.get('address')?.get('pincode')?.errors?.['max']"> pincode should contain max 6 characters only</p>
+        </div>
+
+    </div>
+    <!--///////////////////// -->
+    <div formArrayName="marks">
+        <div *ngFor="let card of marksFormArray.controls; let i = index">
+            <div formGroupName="{{i}}">
+                <h4>marks{{i+1}}</h4>
+                <label for="">class :</label>
+                <input type="number" formControlName="class">
+                <div class="text-danger"
+                    *ngIf="marksFormArray.controls[i]?.get('class')?.invalid && marksFormArray.controls[i]?.get('class')?.touched">
+                    <p *ngIf="marksFormArray.controls[i]?.get('class')?.errors?.['required']"> class is required</p>
+                    <p *ngIf="marksFormArray.controls[i]?.get('class')?.errors?.['min']"> class should be min 0</p>
+                    <p *ngIf="marksFormArray.controls[i]?.get('number')?.errors?.['max']"> class should be max 25</p>
+                </div>
+                <br>
+                <label for="">year :</label>
+                <input type="month" formControlName="year">
+                <br>
+                <label for="">percentage :</label>
+                <input type="number" formControlName="percentage">
+                <div class="text-danger"
+                    *ngIf="marksFormArray.controls[i]?.get('percentage')?.invalid && marksFormArray.controls[i]?.get('percentage')?.touched">
+                    <p *ngIf="marksFormArray.controls[i]?.get('percentage')?.errors?.['required']"> percentage is required</p>
+                    <p *ngIf="marksFormArray.controls[i]?.get('percentage')?.errors?.['min']"> percentage should contain min 30 
+                    </p>
+                    <p *ngIf="marksFormArray.controls[i]?.get('cvv')?.errors?.['max']"> percentage should contain max 100
+                        only</p>
+                </div>
+                <br>
+                <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+                <hr>
+
+            </div>
+        </div>
+<!-- dynamic form -->
+<label for="">Type:</label>
+<label for="">dayscholar</label>
+<input type="radio" name="type" formControlName="type" value="dayscholar">
+<label for="">residential</label>
+<input type="radio" name="type" formControlName="type" value="residential">
+<br>
+<div *ngIf="createStudent1.get('type')?.value=='dayscholar'">
+    <label for="">bus fee :</label>
+    <input type="text" formControlName="busfee">
+</div>
+<div *ngIf="createStudent1.get('type')?.value=='residential'">
+    <label for="">hostel fee</label>
+    <input type="text" formControlName="hostelfee">
+
+</div>
+<br>
+<button class="btn btn-danger" (click)="submit()">submit</button>
+
+

@@ -14,6 +14,9 @@ export class UsersService {
   getUsers():Observable<any>{
     return this._httpClient.get(this.URL+"?limit=10&page=1");
   }
+  getUser(id:string):Observable<any>{
+    return this._httpClient.get(this.URL+"/"+id);
+  }
   getFilteredUsers(term:string):Observable<any>{
     return this._httpClient.get(this.URL+"?filter="+term);
 
@@ -31,6 +34,9 @@ deleteUser(id:string):Observable<any>{
 }
 createUser(data:any):Observable<any>{
   return this._httpClient.post(this.URL,data);
+}
+updateUser(data:any,id:string){
+  return this._httpClient.put(this.URL+"/"+id,data);
 }
 
 }

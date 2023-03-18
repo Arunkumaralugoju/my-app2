@@ -1,4 +1,4 @@
-<p>create-user works!</p>
+<h1>{{isEdit?'edit user form':'create user form'}}</h1>
 <form [formGroup]="userForm">
     <label >name:</label>
     <input type="text"  formControlName="name">
@@ -12,5 +12,6 @@
     <label >image:</label>
     <input type="text" formControlName="image" >
     <br>
-    <button class="btn btn-success" (click)="submit()">submit</button>
+    <button class="btn btn-success" (click)="submit()">{{isEdit?'update':'create'}}</button>
 </form>
+

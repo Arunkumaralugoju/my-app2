@@ -27,7 +27,21 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { ActivityComponent } from './activity/activity.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
-// import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CreateFormComponent } from './create-form/create-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule , } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { ProductComponent } from './product/product.component';
+import { NavComponent } from './nav/nav.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
+
+
+
 
 
 
@@ -57,6 +71,17 @@ import { CreateStudentComponent } from './create-student/create-student.componen
          ActivityComponent,
          CreateUserComponent,
          CreateStudentComponent,
+         CreateFormComponent,
+         UserDetailsComponent,
+         ParentComponent,
+         ChildComponent,
+         ProductComponent,
+         NavComponent,
+         CartlistComponent
+         
+        
+      
+        
   
   ],
   imports: [
@@ -65,7 +90,13 @@ import { CreateStudentComponent } from './create-student/create-student.componen
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    // MatSlideToggleModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule
+
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -39,7 +39,11 @@
             </td>
             <td>{{user.id}}</td>
             <td>
-                <button class="btn btn-success">delete</button>
+                <button class="btn btn-success" (click)="delete(user.id)">delete</button>
+                <br>
+                <button class="btn btn-success" (click)="view(user.id)">view</button>
+                <button class="btn btn-danger" (click)="edit(user.id)">edit</button>
+                
             </td>
 
             

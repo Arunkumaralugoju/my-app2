@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsersService } from '../users.service';
 
@@ -12,7 +13,7 @@ export class UsersComponent {
   public term:string="";
   public column:string="";
   public order:string="";
-  constructor( private _usersService:UsersService) { 
+  constructor( private _usersService:UsersService,private _router:Router) { 
     _usersService.getUsers().subscribe(
       (data:any)=>{
         this.users=data;
@@ -67,6 +68,13 @@ export class UsersComponent {
         alert("internal server error");
       }
     )
+  }
+  view(id:string){
+    this._router.navigateByUrl("/dashboard/user-details/"+id);
+
+  }
+  edit(id:string){
+    this._router.navigateByUrl("/dashboard/create-user/"+id);
   }
 
 
