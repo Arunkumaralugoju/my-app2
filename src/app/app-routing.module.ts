@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AccountsComponent } from './accounts/accounts.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { CarsComponent } from './cars/cars.component';
@@ -60,7 +60,11 @@ const routes: Routes = [
     {path:'product',component:ProductComponent},
     {path:'nav',component:NavComponent},
     {path:'cartlist',component:CartlistComponent},
-    {path:'about-ceo',component:AboutCeoComponent}
+    {path:'about-ceo',component:AboutCeoComponent},
+      {
+        path: 'contact',
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+      },
     
 
     
@@ -72,7 +76,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -45,6 +45,7 @@ import { AboutDirectorComponent } from './about-director/about-director.componen
 import { AbouHistoryComponent } from './abou-history/abou-history.component';
 import { AboutModuleComponent } from './about-module/about-module.component';
 import { AboutModule } from './about/about.module';
+import { PricePipe } from './price.pipe';
 
 
 
@@ -88,7 +89,8 @@ import { AboutModule } from './about/about.module';
          AboutCeoComponent,
          AboutDirectorComponent,
          AbouHistoryComponent,
-         AboutModuleComponent
+         AboutModuleComponent,
+         PricePipe
          
         
       
